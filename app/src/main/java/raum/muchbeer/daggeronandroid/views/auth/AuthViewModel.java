@@ -21,10 +21,10 @@ public class AuthViewModel extends ViewModel {
 
     private static String LOG_TAG = AuthViewModel.class.getSimpleName();
 
-   private final AuthApi authApi;
 
-    SessionManager sessionManager;
-  //  private MediatorLiveData<AuthSecurity<Users>> authUsers = new MediatorLiveData<>();
+    // inject
+   private final AuthApi authApi;  // @Singleton scoped dependency
+    SessionManager sessionManager; // @AuthScope scoped dependency
 
 @Inject
     public AuthViewModel(AuthApi authApi, SessionManager sessionManager) {

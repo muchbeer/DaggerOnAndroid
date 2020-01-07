@@ -3,6 +3,7 @@ package raum.muchbeer.daggeronandroid.views.auth;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProviders;
 
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -22,6 +23,7 @@ import javax.inject.Inject;
 import dagger.android.support.DaggerAppCompatActivity;
 import raum.muchbeer.daggeronandroid.R;
 import raum.muchbeer.daggeronandroid.viewmodel.ViewModelProviderFactory;
+import raum.muchbeer.daggeronandroid.views.main.MainActivity;
 
 public class AuthActivity extends DaggerAppCompatActivity implements View.OnClickListener{
 
@@ -76,6 +78,7 @@ public class AuthActivity extends DaggerAppCompatActivity implements View.OnClic
                     Toast.makeText(getApplicationContext(), "Welcome: "+
                             usersAuthSecurity.data.getUsername(), Toast.LENGTH_LONG).show();
                     txtViewUser.setText("Welcome: " + usersAuthSecurity.data.getUsername());
+                    directToMainActivity();
                     break;
 
                 case NOT_AUTHENTICATED:
@@ -118,4 +121,9 @@ public class AuthActivity extends DaggerAppCompatActivity implements View.OnClic
     private void loginRequest() {
         if(TextUtils.isEmpty(userId.getText().toString())) { return; }
         viewModel.authenticateWithID(Integer.parseInt(userId.getText().toString()));  }
+
+    private void directToMainActivity() {
+        Intent mainActivity = new Intent(this, MainActivity.class);
+        startActivity(mainActivity);
+        finish();}
 }
