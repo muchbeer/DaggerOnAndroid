@@ -64,4 +64,8 @@ dependencies {
 
     def rxjava_retrofit_version = "2.3.0"
     implementation "com.squareup.retrofit2:adapter-rxjava2:$rxjava_retrofit_version"
+
+    // convert observable to livedata - ReactiveStreams support for LiveData
+    implementation "androidx.lifecycle:lifecycle-reactivestreams:$lifecycle_version"
+
 }

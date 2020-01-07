@@ -10,6 +10,7 @@ import dagger.android.AndroidInjection;
 import dagger.android.AndroidInjector;
 import dagger.android.support.AndroidSupportInjectionModule;
 import raum.muchbeer.daggeronandroid.RealApplication;
+import raum.muchbeer.daggeronandroid.pref.SessionManager;
 
 
 @Singleton
@@ -20,6 +21,9 @@ import raum.muchbeer.daggeronandroid.RealApplication;
         ViewModelFactoryModule.class,
 })
 public interface AppComponent extends AndroidInjector<RealApplication> {
+
+    SessionManager sessionManager();
+
 
     @Component.Builder
     interface Builder {
