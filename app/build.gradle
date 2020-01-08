@@ -56,6 +56,10 @@ dependencies {
     def lifecycle_version = '2.1.0'
     implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle_version"
 
+    // Java language implementation
+    implementation "androidx.navigation:navigation-fragment:$lifecycle_version"
+    implementation "androidx.navigation:navigation-ui:$lifecycle_version"
+
     def retrofit_version = "2.7.1"
     implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
     implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"

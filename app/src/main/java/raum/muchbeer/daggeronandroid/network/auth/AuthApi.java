@@ -10,6 +10,7 @@ import retrofit2.http.Path;
 public interface AuthApi {
 
     // /users/id
+    //https://jsonplaceholder.typicode.com/users/1
     @GET("users/{id}")
     Flowable<Users> getUser(
             @Path("id") int id
